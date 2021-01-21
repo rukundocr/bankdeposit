@@ -8,8 +8,10 @@ this.balance = balance;
 deposit(amount){
 if(isNaN(amount)){
 console.log("Enter Amount Please");
+  document.getElementById("error").textContent= "Enter Valid Amount";
 }
 else{
+document.getElementById("error").textContent= "";
 const newBalance = this.balance + amount;
 this.balance= newBalance;
 console.log('You have a deposit of :' + amount);
@@ -20,8 +22,10 @@ document.getElementById("balance").textContent= Client1.balance;
 }
 withdraw(amount){
 if(isNaN(amount)){
+  document.getElementById("error").textContent= "Enter Valid Amount";
 console.log("Enter Amount Please");
 }else{
+  document.getElementById("error").textContent= "";
 if (amount > this.balance){
 console.log('not Enough Balence on your Account');
 }else{
