@@ -1,4 +1,6 @@
-class Account {
+window.onload = (event) => {
+
+  class Account {
 constructor(clientName,balance){
 this.clientName= clientName;
 this.balance = balance;
@@ -12,6 +14,7 @@ const newBalance = this.balance + amount;
 this.balance= newBalance;
 console.log('You have a deposit of :' + amount);
 console.log("Yaour new Balance is :" + newBalance);
+document.getElementById("balance").textContent= Client1.balance;
 }
 
 }
@@ -26,12 +29,14 @@ const newBalance = this.balance-amount;
 console.log('You have withdrown :'+ amount + " from your Account")
 console.log('Your Remaining Balence is :' + newBalance);
 this.balance = newBalance;
+document.getElementById("balance").textContent= Client1.balance;
 }
 }
 
 }
 }
 const Client1 = new Account('RUKUNDO',5000);
+document.getElementById("balance").textContent= Client1.balance;
 const depositTry = document.getElementById('submitDeposit');
 depositTry.addEventListener('click',(e)=> {
 e.preventDefault();
@@ -64,3 +69,6 @@ document.getElementById("balance").textContent= Client1.balance;
 //Client.deposit(100);
 //Client1.withdraw(4000);
 //Client1.withdraw(1000);
+};
+
+
