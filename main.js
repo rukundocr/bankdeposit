@@ -69,7 +69,7 @@ document.getElementById("form2").reset();
 
   //balance check 
 document.getElementById("check").addEventListener('click',()=>{
-document.getElementById("error").textContent= "";
+document.getElementById("error").innerHTML ="";
 console.log(Client1.balance);
 document.getElementById("balance").textContent= Client1.balance;
 });
