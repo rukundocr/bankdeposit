@@ -1,0 +1,66 @@
+class Account {
+constructor(clientName,balance){
+this.clientName= clientName;
+this.balance = balance;
+}
+deposit(amount){
+if(isNaN(amount)){
+console.log("Enter Amount Please");
+}
+else{
+const newBalance = this.balance + amount;
+this.balance= newBalance;
+console.log('You have a deposit of :' + amount);
+console.log("Yaour new Balance is :" + newBalance);
+}
+
+}
+withdraw(amount){
+if(isNaN(amount)){
+console.log("Enter Amount Please");
+}else{
+if (amount > this.balance){
+console.log('not Enough Balence on your Account');
+}else{
+const newBalance = this.balance-amount;
+console.log('You have withdrown :'+ amount + " from your Account")
+console.log('Your Remaining Balence is :' + newBalance);
+this.balance = newBalance;
+}
+}
+
+}
+}
+const Client1 = new Account('RUKUNDO',5000);
+const depositTry = document.getElementById('submitDeposit');
+depositTry.addEventListener('click',(e)=> {
+e.preventDefault();
+let inputValue = document.getElementById('deposit').value;
+//console.log(amount);
+const amount= parseInt(inputValue);
+Client1.deposit(amount);
+document.getElementById("form1").reset();
+})
+
+const withdrawtTry = document.getElementById('submitWithdraw');
+withdrawtTry.addEventListener('click',(e)=> {
+e.preventDefault();
+//console.log('withdraw');
+//clear balance 
+document.getElementById("balance").textContent= "";
+const inputValue = document.getElementById('withdraw').value;
+//console.log(amount);
+const amount= parseInt(inputValue);
+Client1.withdraw(amount);
+document.getElementById("form2").reset();
+});
+
+document.getElementById("check").addEventListener('click',()=>{
+console.log(Client1.balance);
+document.getElementById("balance").textContent= Client1.balance;
+});
+
+//const Client1 = new Account('RUKUNDO',5000);
+//Client.deposit(100);
+//Client1.withdraw(4000);
+//Client1.withdraw(1000);
