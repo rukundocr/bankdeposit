@@ -5,6 +5,7 @@ constructor(clientName,balance){
 this.clientName= clientName;
 this.balance = balance;
 }
+    //deposit method
 deposit(amount){
 if(isNaN(amount)){
 console.log("Enter Amount Please");
@@ -20,9 +21,10 @@ document.getElementById("balance").textContent= Client1.balance;
 }
 
 }
+    //withraw method
 withdraw(amount){
 if(isNaN(amount)){
-  document.getElementById("error").textContent= "Enter Valid Amount";
+ document.getElementById("error").textContent= "Enter Valid Amount";
 console.log("Enter Amount Please");
 }else{
   document.getElementById("error").textContent= "";
@@ -51,6 +53,7 @@ Client1.deposit(amount);
 document.getElementById("form1").reset();
 })
 
+  // withdrawing 
 const withdrawtTry = document.getElementById('submitWithdraw');
 withdrawtTry.addEventListener('click',(e)=> {
 e.preventDefault();
@@ -64,7 +67,9 @@ Client1.withdraw(amount);
 document.getElementById("form2").reset();
 });
 
+  //balance check 
 document.getElementById("check").addEventListener('click',()=>{
+document.getElementById("error").textContent= "";
 console.log(Client1.balance);
 document.getElementById("balance").textContent= Client1.balance;
 });
